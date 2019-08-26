@@ -1,0 +1,52 @@
+Hey Capstone students!
+
+Here's a heavely secured template that was originally built by Kevin Ho and modified by myself.
+
+
+   
+___________________________________________________________________________________________________________________________________________________________________
+
+1. To enable Web Services (and Login) you must add your username and password assigned to your team.
+	
+	Go to Web.config under ------> Solution Explorer (in VS) > Template (Solution) > Web.Config (File)
+
+		On line 9, add your Database connection string in the blank field named connectionString="". (This allows you to communicate with your database)
+			Example: "Data Source=np-stem.temple.edu; Initial Catalog=CIS4396SXX;PersistSecurityInfo=True; Integrated Security=False;User id=usrCIS4396SXX;Password=**********"
+			
+		On line 14, add your Database password in the blank value field named Connection_DB_Password. (Encode password with base64 format, so it is not plain text. https://www.base64encode.org/)
+
+		On line 15, add your Web Services Username in the blank value field named Connection_WS_Username. (This allows you to communicate with Temple Web Services)
+			
+		On line 16, add your Web Services Password in the blank value field named Connection_WS_Password. (This allows you to communicate with Temple Web Services)
+
+
+		
+2. Shibboleth will protect the content within the secure folder, so you need to create a folder called "secure" in your project.  Review the default.aspx page inside of the secure folder to see how I retrieve the request headers populated by Shibboleth.   
+
+Please go to the URL below and read the basic concepts of how Shibboleth works.
+
+https://www.shibboleth.net/index/basic/
+
+
+IMPORTANT NOTE: Shibboleth will NOT work when running your project locally. You will need to manually populate any variables that are retrieved from the headers.  Also, the "employeeNumber" attribute will be used for all users of the system.  The employeeNumber is the user's TUid.
+
+
+___________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+Once you are done, you may begin coding your systems right away!
+
+
+
+
+
+
+Feel free to email me if you have any questions at nick.fabrizio@temple.edu
+
+
+
+
+
+- Good luck, have fun, and attempt your best to build your systems!

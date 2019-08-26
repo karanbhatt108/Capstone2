@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Page.master.cs" Inherits="Template.Master_Page" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <!--Step #1: Set the title of all pages in ID="Master_Title"-->
+    <title>
+        <asp:ContentPlaceHolder ID="Master_Title" runat="server">
+            Capstone Template SP17
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <!--Step #2: Supporting 1:1 ratio for smaller screens (mobile support)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Step #3: Referencing Bootstrap JS/CSS CDNs with integrety and security-->
+    <link runat="server" rel="shortcut icon" href="Resources/favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="Resources/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--Step #4: Reference your custom scripts below -->
+    <asp:ContentPlaceHolder ID="Master_Custom_Scripts" runat="server">
+        <!--DO NOT CHANGE: This is where you will put your custom scripts in other pages-->
+    </asp:ContentPlaceHolder>
+</head>
+
+<body style="overflow-x: hidden;">
+    <form id="Form_Master" runat="server">
+        <!--Step #4: Universal NavBar -->
+        <nav class="navbar navbar-static-top navbar-inverse" style="background-color: black;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="default.aspx">Capstone Template</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown" id="nav_admin" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Admin <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <asp:LinkButton ID="lb_Dashboard" runat="server"><span class="glyphicon glyphicon-dashboard"> Dashboard</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Account" runat="server"><span class="glyphicon glyphicon-user"> Account</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Blacklist" runat="server"><span class="glyphicon glyphicon-lock"> Blacklist</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Email" runat="server"><span class="glyphicon glyphicon-envelope"> Email</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Variable" runat="server"><span class="glyphicon glyphicon-qrcode"> Variable</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Question" runat="server"><span class="glyphicon glyphicon-question-sign"> Question</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Store" runat="server"> <span class="glyphicon glyphicon-home"> Store</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Service" runat="server"><span class="glyphicon glyphicon-print"> Service</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Item" runat="server"><span class="glyphicon glyphicon-tag"> Item</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Refund" runat="server"><span class="glyphicon glyphicon-usd"> Refund</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_History" runat="server"><span class="glyphicon glyphicon-time"> Export</span></asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" id="nav_manager" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Manager <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:LinkButton ID="lb_Manager_Management" runat="server"><span class="glyphicon glyphicon-wrench"> Management</span></asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" id="nav_consultant" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Consultant <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:LinkButton ID="lb_Management" runat="server" CssClass=""><span class="glyphicon glyphicon-wrench"> Management</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_C_Refund" runat="server" CssClass=""><span class="glyphicon glyphicon-usd"> Refund</span></asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" id="nav_customer" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Customer <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:LinkButton ID="lb_Shop" runat="server"><span class="glyphicon glyphicon-tag"> Shop</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Cart" runat="server"><span class="glyphicon glyphicon-shopping-cart"> Cart</span></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lb_Queue" runat="server"><span class="glyphicon glyphicon-list-alt"> Status</span></asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <asp:LinkButton runat="server" ID="lbl_User" CssClass="disabled" Enabled="false" CausesValidation="false"></asp:LinkButton>
+                        </li>
+                        <li>
+                            <asp:LinkButton ID="lb_Logout" runat="server" OnClick="lb_Logout_Click"><span class="glyphicon glyphicon-log-out"> Logout</span></asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="Master_Main_Content" runat="server">
+            <!--DO NOT CHANGE: This is where the main content of your page will be written-->
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="Master_Secondary_Content" runat="server">
+            <!--DO NOT CHANGE: You can use this section for 'other' content such as modals or hidden fields-->
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
